@@ -12,4 +12,9 @@
     <PackageReference Include="SharpPcap" Version="6.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RawSocket.Server\RawSocket.Server.csproj" />
+    <ProjectReference Include="..\RawSocket\RawSocket.Common.csproj" />
+  </ItemGroup>
+
 </Project>
