@@ -5,14 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-
 using RawSocket.Common;
 using System.Collections.Concurrent;
 using RawSocket.Server;
 
 namespace SimpleTcpSniffer
 {
-    public class RawTcpSniffer : IRawTcpServer
+    public class RawTcpServer : IRawTcpServer
     {
         private LibPcapLiveDevice _device;
         private IPEndPoint _endPoint; // хранит ip и port
@@ -44,7 +43,7 @@ namespace SimpleTcpSniffer
         {
             return await Task.Run(() => _acceptedConnections.Take(cancellationToken), cancellationToken);
         }
-        public RawTcpSniffer(IPEndPoint localEndPoint)
+        public RawTcpServer(IPEndPoint localEndPoint)
         {
             if (!_isCapturing) // запущен ли сниффер
             {
